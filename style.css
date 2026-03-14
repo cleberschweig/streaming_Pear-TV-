@@ -1,0 +1,13 @@
+/* style.css */
+
+#hero-bg {
+  /* O gradiente fica aqui para proteger o texto */
+  background-image:
+    linear-gradient(to right, #0a0a0a 20%, transparent 70%),
+    linear-gradient(to top, #0a0a0a 0%, transparent 40%);
+
+  /* Configurações de responsividade que conversamos */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
