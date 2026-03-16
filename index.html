@@ -80,32 +80,56 @@
       <div
         class="absolute inset-0 bg-[url('./assets/avengers-bg.jpg')] bg-cover bg-center opacity-40"
       ></div>
+
       <div
-        class="relative h-full flex flex-col justify-center px-6 lg:px-24 max-w-[1600px] mx-auto z-10"
+        class="relative h-full flex flex-col lg:flex-row items-center justify-between px-6 lg:px-24 max-w-[1600px] mx-auto z-10 gap-10"
       >
-        <div class="flex items-center gap-3 mb-4">
-          <span
-            class="bg-primary text-white text-[10px] font-bold px-2 py-1 rounded uppercase"
-            >Pear TV Original</span
-          >
-          <span class="text-secondary font-bold text-sm"
-            >#1 em Filmes Hoje</span
-          >
-        </div>
-        <h1 class="text-5xl lg:text-7xl font-black mb-4">
-          VINGADORES:<br />ULTIMATO
-        </h1>
-        <p class="text-lg text-slate-300 max-w-xl">
-          Após Thanos eliminar metade das criaturas vivas, os heróis precisam se
-          reunir para desfazer o estrago.
-        </p>
-        <div class="flex gap-4 pt-6">
+        <div class="flex flex-col items-start max-w-xl">
+          <div class="flex items-center gap-3 mb-4">
+            <span
+              class="bg-primary text-white text-[10px] font-bold px-2 py-1 rounded uppercase"
+              >Pear TV Original</span
+            >
+            <span class="text-secondary font-bold text-sm"
+              >#1 em Filmes Hoje</span
+            >
+          </div>
+
+          <h1 class="text-5xl lg:text-7xl font-black mb-4 leading-tight">
+            VINGADORES:<br />ULTIMATO
+          </h1>
+
+          <p class="text-lg text-slate-300 mb-6">
+            Após Thanos eliminar metade das criaturas vivas, os heróis precisam
+            se reunir para desfazer o estrago.
+          </p>
+
           <button
             class="bg-secondary text-black px-8 py-3 rounded-lg font-bold flex items-center gap-2 hover:scale-105 transition-all"
           >
             <span class="material-symbols-outlined">play_arrow</span> Assistir
             Agora
           </button>
+        </div>
+
+        <div
+          class="hidden lg:block bg-zinc-900/60 backdrop-blur-md border border-white/10 p-8 rounded-2xl max-w-sm"
+        >
+          <h2 class="text-2xl font-bold mb-4 leading-tight">
+            Filmes, séries, esportes e muito mais
+          </h2>
+          <p class="text-slate-300 text-sm">
+            Assista com anúncios e aproveite entrega grátis em diversos
+            produtos.
+          </p>
+          <button
+            class="w-full bg-secondary text-black font-extrabold py-4 rounded-xl mt-6 hover:scale-105 transition-all"
+          >
+            Faça Login
+          </button>
+          <p class="text-slate-500 text-[10px] mt-4 text-center italic">
+            Assista sem anúncios por mais R$ 19,00/mês.
+          </p>
         </div>
       </div>
     </section>
