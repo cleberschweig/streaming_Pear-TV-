@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pear TV</title>
+    <title>Pear TV+</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link
       rel="stylesheet"
@@ -31,7 +31,10 @@
       }
     </style>
   </head>
-  <body class="bg-[#0a0a0a] text-white font-sans">
+  <body
+    class="bg-[#0a0a0a] text-white font-sans selection:bg-secondary selection:text-black"
+  >
+    <!-- HEADER -->
     <header
       class="fixed top-0 w-full z-50 bg-[#0a0a0a]/95 backdrop-blur-sm px-4 lg:px-10 py-3 flex items-center justify-between border-b border-white/10"
     >
@@ -74,15 +77,17 @@
       </div>
     </header>
 
-    <section
-      class="relative w-full h-[80vh] overflow-hidden bg-gradient-to-b from-transparent to-[#0a0a0a]"
-    >
+    <!-- HERO SECTION -->
+    <section class="relative w-full h-[80vh] overflow-hidden">
       <div
         class="absolute inset-0 bg-[url('./assets/avengers-bg.jpg')] bg-cover bg-center opacity-40"
       ></div>
+      <div
+        class="absolute inset-0 bg-gradient-to-b from-transparent via-[#0a0a0a]/60 to-[#0a0a0a]"
+      ></div>
 
       <div
-        class="relative h-full flex flex-col lg:flex-row items-center justify-between px-6 lg:px-24 max-w-[1600px] mx-auto z-10 gap-10"
+        class="relative h-full flex flex-col lg:flex-row items-center justify-between px-6 lg:px-24 max-w-[1600px] mx-auto z-10 gap-10 pt-20"
       >
         <div class="flex flex-col items-start max-w-xl">
           <div class="flex items-center gap-3 mb-4">
@@ -94,16 +99,15 @@
               >#1 em Filmes Hoje</span
             >
           </div>
-
-          <h1 class="text-5xl lg:text-7xl font-black mb-4 leading-tight">
-            VINGADORES:<br />ULTIMATO
+          <h1
+            class="text-5xl lg:text-7xl font-black mb-4 leading-tight uppercase"
+          >
+            Vingadores:<br />Ultimato
           </h1>
-
           <p class="text-lg text-slate-300 mb-6">
             Após Thanos eliminar metade das criaturas vivas, os heróis precisam
             se reunir para desfazer o estrago.
           </p>
-
           <button
             class="bg-secondary text-black px-8 py-3 rounded-lg font-bold flex items-center gap-2 hover:scale-105 transition-all"
           >
@@ -133,8 +137,11 @@
         </div>
       </div>
     </section>
+    <div id="cta-subscription-placeholder"></div>
+    <div id="casca-grossa-container"></div>
 
     <div class="space-y-20 pb-20 relative z-20 max-w-[1600px] mx-auto">
+      <!-- RECOMENDADOS -->
       <section class="px-6 lg:px-12">
         <h2 class="text-2xl font-bold mb-6 flex items-center gap-2">
           <span class="w-1 h-6 bg-primary rounded-full"></span> Recomendado para
@@ -142,8 +149,9 @@
         </h2>
         <div
           id="recomended-container"
-          class="flex gap-4 overflow-x-auto no-scrollbar"
+          class="flex gap-4 overflow-x-auto no-scrollbar pb-4"
         >
+          <!-- Card 1 -->
           <div class="flex-none w-44 lg:w-60 group cursor-pointer">
             <div
               class="relative aspect-[2/3] rounded-xl overflow-hidden border border-white/10 group-hover:scale-105 transition-all duration-300"
@@ -164,9 +172,31 @@
             </div>
             <p class="mt-3 font-bold truncate">Avengers Endgame</p>
           </div>
+          <!-- Card 2 -->
+          <div class="flex-none w-44 lg:w-60 group cursor-pointer">
+            <div
+              class="relative aspect-[2/3] rounded-xl overflow-hidden border border-white/10 group-hover:scale-105 transition-all duration-300"
+            >
+              <img
+                class="w-full h-full object-cover"
+                src="./assets/spider man homekong.jpg"
+                alt="homem aranha"
+              />
+              <div
+                class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity"
+              >
+                <span
+                  class="bg-secondary text-black p-3 rounded-full material-symbols-outlined"
+                  >play_arrow</span
+                >
+              </div>
+            </div>
+            <p class="mt-3 font-bold truncate">Homem Aranha: Homecoming</p>
+          </div>
         </div>
       </section>
 
+      <!-- TOP 10 RANKING (TODOS OS 10 CARDS) -->
       <section class="px-6 lg:px-12">
         <h2 class="text-2xl font-bold mb-8 flex items-center gap-2">
           Top Filmes
@@ -174,8 +204,8 @@
             >trending_up</span
           >
         </h2>
-
         <div class="flex gap-16 overflow-x-auto no-scrollbar pb-10 px-10">
+          <!-- 1 -->
           <div class="flex-none relative w-48 lg:w-60 group cursor-pointer">
             <span
               class="absolute -left-12 bottom-0 text-[160px] font-black text-white/20 leading-none z-0 group-hover:text-secondary/30 transition-colors"
@@ -192,6 +222,7 @@
             </div>
           </div>
 
+          <!-- 2 -->
           <div class="flex-none relative w-48 lg:w-60 group cursor-pointer">
             <span
               class="absolute -left-12 bottom-0 text-[160px] font-black text-white/20 leading-none z-0 group-hover:text-secondary/30 transition-colors"
@@ -208,6 +239,7 @@
             </div>
           </div>
 
+          <!-- 3 -->
           <div class="flex-none relative w-48 lg:w-60 group cursor-pointer">
             <span
               class="absolute -left-12 bottom-0 text-[160px] font-black text-white/20 leading-none z-0 group-hover:text-secondary/30 transition-colors"
@@ -224,6 +256,7 @@
             </div>
           </div>
 
+          <!-- 4 -->
           <div class="flex-none relative w-48 lg:w-60 group cursor-pointer">
             <span
               class="absolute -left-12 bottom-0 text-[160px] font-black text-white/20 leading-none z-0 group-hover:text-secondary/30 transition-colors"
@@ -240,6 +273,7 @@
             </div>
           </div>
 
+          <!-- 5 -->
           <div class="flex-none relative w-48 lg:w-60 group cursor-pointer">
             <span
               class="absolute -left-12 bottom-0 text-[160px] font-black text-white/20 leading-none z-0 group-hover:text-secondary/30 transition-colors"
@@ -256,6 +290,7 @@
             </div>
           </div>
 
+          <!-- 6 -->
           <div class="flex-none relative w-48 lg:w-60 group cursor-pointer">
             <span
               class="absolute -left-12 bottom-0 text-[160px] font-black text-white/20 leading-none z-0 group-hover:text-secondary/30 transition-colors"
@@ -272,6 +307,7 @@
             </div>
           </div>
 
+          <!-- 7 -->
           <div class="flex-none relative w-48 lg:w-60 group cursor-pointer">
             <span
               class="absolute -left-12 bottom-0 text-[160px] font-black text-white/20 leading-none z-0 group-hover:text-secondary/30 transition-colors"
@@ -287,17 +323,70 @@
               />
             </div>
           </div>
+
+          <!-- 8 -->
+          <div class="flex-none relative w-48 lg:w-60 group cursor-pointer">
+            <span
+              class="absolute -left-12 bottom-0 text-[160px] font-black text-white/20 leading-none z-0 group-hover:text-secondary/30 transition-colors"
+              >8</span
+            >
+            <div
+              class="relative z-10 aspect-[2/3] rounded-xl overflow-hidden border border-white/10 group-hover:scale-105 transition-all"
+            >
+              <img
+                class="w-full h-full object-cover"
+                src="./assets/begins.jpg"
+                alt="Filme 8"
+              />
+            </div>
+          </div>
+
+          <!-- 9 -->
+          <div class="flex-none relative w-48 lg:w-60 group cursor-pointer">
+            <span
+              class="absolute -left-12 bottom-0 text-[160px] font-black text-white/20 leading-none z-0 group-hover:text-secondary/30 transition-colors"
+              >9</span
+            >
+            <div
+              class="relative z-10 aspect-[2/3] rounded-xl overflow-hidden border border-white/10 group-hover:scale-105 transition-all"
+            >
+              <img
+                class="w-full h-full object-cover"
+                src="./assets/dark nigth.jpg"
+                alt="Filme 9"
+              />
+            </div>
+          </div>
+
+          <!-- 10 -->
+          <div class="flex-none relative w-48 lg:w-60 group cursor-pointer">
+            <span
+              class="absolute -left-12 bottom-0 text-[160px] font-black text-white/20 leading-none z-0 group-hover:text-secondary/30 transition-colors"
+              >10</span
+            >
+            <div
+              class="relative z-10 aspect-[2/3] rounded-xl overflow-hidden border border-white/10 group-hover:scale-105 transition-all"
+            >
+              <img
+                class="w-full h-full object-cover"
+                src="./assets/resurge.jpg"
+                alt="Filme 10"
+              />
+            </div>
+          </div>
         </div>
       </section>
 
+      <!-- BANNER PROMOCIONAL -->
       <section class="px-6 lg:px-12">
         <div
           class="bg-[#1a1a1a] rounded-3xl overflow-hidden flex flex-col md:flex-row items-center relative min-h-[400px] border border-white/5"
         >
           <div class="p-10 lg:p-20 z-20 w-full md:w-1/2">
             <div class="flex items-center gap-2 mb-4">
-              <span class="material-symbols-outlined">Pear</span>
-              <span class="font-bold text-xl">tv+</span>
+              <span class="font-bold text-xl tracking-tight"
+                >Pear <span class="text-secondary italic">tv+</span></span
+              >
             </div>
             <h3 class="text-4xl font-extrabold mb-6 leading-tight">
               Curta lançamentos todas as semanas.
@@ -316,125 +405,69 @@
               class="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-[#1a1a1a] to-transparent z-10"
             ></div>
             <div
-              class="grid grid-cols-3 gap-3 transform rotate-12 scale-110 opacity-50 hover:opacity-80 transition-opacity"
+              class="grid grid-cols-3 gap-3 transform rotate-12 scale-110 opacity-50"
             >
-              <img src="./assets/ous.jpg" class="rounded-lg shadow-2xl" />
               <img
-                src="./assets/titanic.webp"
-                class="rounded-lg shadow-2xl mt-8"
+                src="./assets/spider man homekong.jpg"
+                class="rounded-lg shadow-2xl"
               />
+              <img src="./assets/300.jpg" class="rounded-lg shadow-2xl mt-8" />
               <img
-                src="./assets/avengers endgame.jpg"
+                src="./assets/justice league.webp"
                 class="rounded-lg shadow-2xl"
               />
               <img
-                src="./assets/madame teia.jpg"
+                src="./assets/dark nigth.jpg"
                 class="rounded-lg shadow-2xl -mt-10"
               />
               <img src="./assets/ous.jpg" class="rounded-lg shadow-2xl" />
               <img
-                src="./assets/titanic.webp"
-                class="rounded-lg shadow-2xl mt-4"
+                src="./assets/begins.jpg"
+                class="rounded-xl shadow-2xl mt-4"
               />
             </div>
           </div>
         </div>
       </section>
-      <section class="px-6 lg:px-12 mt-24 mb-20">
-        <div class="max-w-4xl mx-auto text-center">
-          <span
-            class="material-symbols-outlined text-5xl mb-4 text-white opacity-90"
-            >tv_gen</span
-          >
 
-          <h2
-            class="text-4xl lg:text-5xl font-extrabold text-white mb-6 tracking-tight"
-          >
-            Assista aqui e na sua TV.
-          </h2>
-
-          <p class="text-slate-400 text-lg mb-12 max-w-2xl mx-auto font-medium">
-            Encontre o Pear TV no app TV, disponível em seus dispositivos Apple,
-            em smart TVs, na web e em outros dispositivos.
-          </p>
-
-          <div
-            class="grid grid-cols-3 md:grid-cols-5 gap-10 items-center justify-items-center opacity-60"
-          >
-            <div class="flex flex-col items-center group cursor-pointer">
-              <span class="text-white font-bold text-lg group-hover:opacity-100"
-                >SAMSUNG</span
-              >
-              <span class="text-[10px] text-white font-bold">Smart TV</span>
-            </div>
-
-            <div class="flex items-center gap-1 group cursor-pointer">
-              <span class="text-white font-bold text-xl">LG</span>
-              <span class="text-[10px] text-white font-bold leading-tight"
-                >SMART TV</span
-              >
-            </div>
-
-            <div class="group cursor-pointer">
-              <span class="text-white font-bold text-xl tracking-[0.2em]"
-                >SONY</span
-              >
-            </div>
-
-            <div class="flex items-center gap-1 group cursor-pointer">
-              <span class="material-symbols-outlined text-2xl"
-                >sports_esports</span
-              >
-              <span class="text-white font-bold text-lg italic">XBOX</span>
-            </div>
-
-            <div class="flex items-center gap-1 group cursor-pointer">
-              <span class="material-symbols-outlined text-2xl"
-                >videogame_asset</span
-              >
-              <span
-                class="text-white font-bold text-sm uppercase tracking-tighter"
-                >PlayStation</span
-              >
-            </div>
-
-            <div class="group cursor-pointer">
-              <span class="text-white font-black text-xl italic">Roku</span>
-            </div>
-
-            <div class="group cursor-pointer">
-              <span class="text-white font-bold text-lg italic"
-                >fire<span class="text-secondary italic">tv</span></span
-              >
-            </div>
-
-            <div class="flex items-center gap-1 group cursor-pointer">
-              <span class="material-symbols-outlined text-xl text-white"
-                >google</span
-              >
-              <span class="text-white font-medium">Google TV</span>
-            </div>
-
-            <div class="group cursor-pointer">
-              <span class="text-white font-bold text-xl tracking-tighter"
-                >VIZIO</span
-              >
-            </div>
-
-            <div class="group cursor-pointer">
-              <span class="text-white font-light text-xl italic">xfinity</span>
-            </div>
-          </div>
+      <!-- DISPOSITIVOS -->
+      <section class="px-6 lg:px-12 mt-24 mb-20 text-center">
+        <span
+          class="material-symbols-outlined text-5xl mb-4 text-white opacity-90"
+          >tv_gen</span
+        >
+        <h2
+          class="text-4xl lg:text-5xl font-extrabold text-white mb-6 tracking-tight"
+        >
+          Assista aqui e na sua TV.
+        </h2>
+        <p class="text-slate-400 text-lg mb-12 max-w-2xl mx-auto font-medium">
+          Encontre o Pear TV no app TV, disponível em seus dispositivos Apple,
+          smart TVs e mais.
+        </p>
+        <div
+          class="grid grid-cols-2 md:grid-cols-5 gap-10 items-center justify-items-center opacity-60 max-w-4xl mx-auto"
+        >
+          <span class="font-bold text-lg">SAMSUNG</span>
+          <span class="font-bold text-xl">LG</span>
+          <span class="font-bold text-xl tracking-[0.2em]">SONY</span>
+          <span class="font-bold text-lg italic">XBOX</span>
+          <span class="font-bold text-sm uppercase">PlayStation</span>
+          <span class="font-bold text-lg">FIRE TV</span>
+          <span class="font-bold text-xl">TCL</span>
+          <span class="font-bold text-xl tracking-[0.2em]">GOOGLE TV</span>
+          <span class="font-bold text-lg italic">VIZIO</span>
+          <span class="font-bold text-sm uppercase">ROKU streaming</span>
         </div>
       </section>
     </div>
+
+    <!-- FOOTER -->
     <footer
       class="bg-[#0a0a0a] border-t border-white/5 pt-12 pb-8 px-6 lg:px-24"
     >
-      <div class="max-w-[1600px] mx-auto">
-        <div
-          class="flex items-center gap-4 text-xs text-slate-500 mb-6 font-medium"
-        >
+      <div class="max-w-[1600px] mx-auto text-xs text-slate-500">
+        <div class="flex items-center gap-4 mb-6 font-medium">
           <span class="hover:text-white cursor-pointer transition-colors"
             >Brasil</span
           >
@@ -443,43 +476,21 @@
             >English (UK)</span
           >
         </div>
-
-        <div class="text-xs text-slate-500 mb-6">
+        <div class="mb-6">
           Copyright © 2026
           <span class="text-slate-300 font-semibold">Pear Inc.</span> Todos os
           direitos reservados.
         </div>
-
-        <div
-          class="flex flex-wrap items-center gap-y-2 gap-x-4 text-[11px] text-slate-500"
-        >
+        <div class="flex flex-wrap gap-4">
           <a href="#" class="hover:text-white transition-colors"
-            >Termos dos serviços de internet</a
+            >Termos de serviço</a
           >
-          <span class="hidden md:block w-[1px] h-3 bg-slate-800"></span>
-
-          <a href="#" class="hover:text-white transition-colors"
-            >Pear TV e privacidade</a
-          >
-          <span class="hidden md:block w-[1px] h-3 bg-slate-800"></span>
-
-          <a href="#" class="hover:text-white transition-colors"
-            >Política de utilização de cookies</a
-          >
-          <span class="hidden md:block w-[1px] h-3 bg-slate-800"></span>
-
+          <a href="#" class="hover:text-white transition-colors">Privacidade</a>
+          <a href="#" class="hover:text-white transition-colors">Cookies</a>
           <a href="#" class="hover:text-white transition-colors">Suporte</a>
-        </div>
-
-        <div class="mt-10 flex justify-center md:justify-start">
-          <div
-            class="flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 bg-white/5 text-[10px] text-slate-400"
-          >
-            <span class="material-symbols-outlined text-sm">security</span>
-            Conexão Segura Pear TV
-          </div>
         </div>
       </div>
     </footer>
+    <script src="components/components.js"></script>
   </body>
 </html>
