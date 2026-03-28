@@ -59,6 +59,42 @@
         </nav>
       </div>
 
+      <!-- alocamos um modal aqui p o user, fica  com mais car  de sistema -->
+      <div id="login-container" class="flex items-center gap-4">
+        <div id="login-inputs" class="flex items-center gap-2">
+          <input
+            type="email"
+            id="email"
+            placeholder="E-mail"
+            class="bg-white/5 border border-white/10 rounded-lg px-3 py-1.5 text-sm text-white focus:outline-none w-32"
+          />
+          <input
+            type="password"
+            id="password"
+            placeholder="Senha"
+            class="bg-white/5 border border-white/10 rounded-lg px-3 py-1.5 text-sm text-white focus:outline-none w-32"
+          />
+          <button
+            onclick="fazerLogin()"
+            class="bg-secondary px-4 py-1.5 rounded-lg text-sm font-bold text-white"
+          >
+            Entrar
+          </button>
+        </div>
+
+        <div id="user-logged" class="hidden flex items-center gap-2">
+          <span class="text-white font-medium text-sm"
+            >Olá, <span id="user-name" class="font-bold text-secondary"></span
+          ></span>
+          <button
+            onclick="logout()"
+            class="text-slate-500 text-xs hover:text-white underline"
+          >
+            Sair
+          </button>
+        </div>
+      </div>
+
       <div class="flex items-center gap-5">
         <span
           class="material-symbols-outlined cursor-pointer hover:text-secondary"

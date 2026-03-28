@@ -1,5 +1,40 @@
 // ... (funções anteriores como loadPriceBanner)
 
+async function handleLogin(email, password) {
+  try {
+    const response = await fetch("http://localhost:3000/login", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email, password }),
+    });
+
+    const data = await response.json();
+
+    if (response.ok) {
+      // 1. Pegamos os elementos que queremos mexer
+      const inputSection = document.getElementById("login-inputs");
+      const userSection = document.getElementById("user-logged");
+      const nameSpan = document.getElementById("user-name");
+
+      // 2. Fazemos a mágica da troca
+      inputSection.classList.add("hidden"); // Esconde os inputs
+      userSection.classList.remove("hidden"); // Mostra a área do usuário
+      nameSpan.innerText = data.user.name; // Coloca o nome que veio do servidor
+
+      console.log("Visual atualizado para o usuário:", data.user.name);
+    } else {
+      alert("Erro: " + data.message);
+    }
+  } catch (error) {
+    console.error("Erro ao conectar:", error);
+  }
+}
+
+// Função extra para deslogar
+function logout() {
+  window.location.reload(); // Simplesmente recarrega a página para resetar tudo
+}
+
 function loadPriceBanner() {
   console.log("Tentando carregar o banner..."); // Isso vai aparecer no F12 do navegador
   const container = document.getElementById("cta-subscription-placeholder");
@@ -38,7 +73,6 @@ function loadPriceBanner() {
   }
 }
 
-// Garante que o código rode mesmo que o script esteja no topo
 if (document.readyState === "loading") {
   document.addEventListener("DOMContentLoaded", loadPriceBanner);
 } else {
@@ -111,6 +145,31 @@ function loadCascaGrossa() {
       </div>
     </section>
     `;
+}
+function fazerLogin() {
+  const emailField = document.getElementById("email");
+  const passwordField = document.getElementById("password");
+
+  // Verifica se os campos existem antes de pegar o valor
+  if (emailField && passwordField) {
+    const email = emailField.value;
+    const password = passwordField.value;
+
+    if (!email || !password) {
+      alert("Por favor, preencha e-mail e senha!");
+      return;
+    }
+
+    console.log("Tentando logar com:", email);
+    handleLogin(email, password); // Chama a função que envia para o servidor
+  }
+}
+function fazerLogin() {
+  const email = document.getElementById("email").value;
+  const pass = document.getElementById("password").value;
+
+  // Chama a função handleLogin que faz o fetch para o servidor
+  handleLogin(email, pass);
 }
 
 loadCascaGrossa();
